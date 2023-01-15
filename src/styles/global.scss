@@ -1,6 +1,9 @@
 @import "./base/variables";
 @import "./base/reset";
 @import "./pages/home";
+@import "./base/mixins";
 @import "./components/sidebar";
 @import "./components/topbar";
 @import "./components/content";
+@import "./components/logo";
+@import "./components/countries";

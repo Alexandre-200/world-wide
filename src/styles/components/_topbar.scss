@@ -1,0 +1,22 @@
+.topbar {
+  padding: 20px 10px;
+  border-radius: 3px;
+  background-color: $white;
+  display: flex;
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 5px;
+    margin-left: auto;
+  }
+
+  &__link{
+    transition: color .2s ease;
+    cursor: pointer;
+    &:hover{
+        color: $pink;
+    }
+  }
+}
