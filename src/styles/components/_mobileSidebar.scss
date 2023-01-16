@@ -1,14 +1,10 @@
-.sidebar {
+.mobileSidebar {
   flex: 2;
   background-color: $white;
   padding: 50px 20px;
 
   @media (max-width: 650px){
     display: none;
-  }
-  
-  @media (min-width: 651px){
-    display: block;
   }
 
   &__menu {

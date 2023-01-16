@@ -1,23 +1,60 @@
 import { ArrowBack } from "@mui/icons-material";
+import { Country as CountryList, City, State } from "country-state-city";
+import { useNavigate, useParams } from "react-router-dom";
 import Topbar from "../components/Topbar";
 
 const Country = () => {
+  const { isoCode } = useParams();
+
+  const navigate = useNavigate();
+  const country = CountryList.getCountryByCode(isoCode);
+  const states = State.getStatesOfCountry(isoCode);
+  const cities = City.getCitiesOfCountry(isoCode);
+
   return (
-    <div className="full-country">
+    <>
       <Topbar />
-      <div className="full-country__details">
-        <div className="full-country__back">
-          <ArrowBack />
+      <div className="full-country">
+        <div className="full-country__details">
+          <div className="full-country__back" onClick={() => navigate("../")}>
+            <ArrowBack />
+          </div>
+          <div className="full-country__flag">
+            <img
+              alt={country.name}
+              src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${isoCode}.svg`}
+            />
+          </div>
+          <h3 className="full-country__name">{country.name}</h3>
+          <div className="full-country__data">
+            <div className="full-country__states">
+              <h3 className="full-country__header">{states.length}</h3>
+              <ul className="full-country__list">
+                {states.sort().map((state) => {
+                  return (
+                    <li key={state.name} className="full-country__item">
+                      {state.name}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <div className="full-country__states">
+              <h3 className="full-country__header">{cities.length}</h3>
+              <ul className="full-country__list">
+                {cities.sort().map((city) => {
+                  return (
+                    <li key={city.name} className="full-country__item">
+                      {city.name}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className="full-country__flag">
-          <img
-            alt="United States"
-            src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/MZ.svg`}
-          />
-        </div>
-        <h3 className="full-country__name">Mozambique</h3>
       </div>
-    </div>
+    </>
   );
 };
 

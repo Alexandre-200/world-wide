@@ -3,6 +3,16 @@
   border-radius: 3px;
   background-color: $white;
   display: flex;
+  align-items: center;
+
+  &__hamburguer{
+    cursor: pointer;
+    display: none;
+
+    @media (max-width: 650px){
+      display: block;
+    }
+  }
 
   &__menu {
     display: flex;

@@ -3,11 +3,15 @@ import {
   YouTube,
   FacebookRounded,
   Instagram,
+  Menu
 } from "@mui/icons-material";
 
 const Topbar = () => {
   return (
     <div className="topbar">
+      <div className="topbar__hamburguer">
+        <Menu/>
+      </div>
       <ul className="topbar__menu">
         <li className="topbar__item">
           <a href="www.google.com" target="_blank" className="topbar__link">

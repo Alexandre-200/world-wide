@@ -5,6 +5,10 @@
     display: flex;
     gap: 50px;
     flex-wrap: wrap;
+
+    @media (max-width: 650px){
+      justify-content: center;
+    }
   }
 }
 
@@ -13,9 +17,10 @@
   background-color: $white;
   border-radius: 5px;
   padding: 10px;
- 
   box-shadow: 0 3px 5px rgba($black, 0.1);
-  //margin: 50px 0;
+  @media (max-width: 600px) {
+    width: 300px;
+  }
 
   &__name {
     display: flex;
