@@ -3,14 +3,14 @@ import {
   YouTube,
   FacebookRounded,
   Instagram,
-  Menu
+  Menu,
 } from "@mui/icons-material";
 
-const Topbar = () => {
+const Topbar = ({ setShowMenu }) => {
   return (
     <div className="topbar">
-      <div className="topbar__hamburguer">
-        <Menu/>
+      <div className="topbar__hamburguer" onClick={setShowMenu}>
+        <Menu />
       </div>
       <ul className="topbar__menu">
         <li className="topbar__item">
@@ -34,7 +34,6 @@ const Topbar = () => {
           </a>
         </li>
       </ul>
-      
     </div>
   );
 };

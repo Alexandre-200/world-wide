@@ -1,7 +1,7 @@
 @import "./base/variables";
 @import "./base/reset";
 @import "./pages/home";
-@import './pages/country';
+@import "./pages/country";
 @import "./base/mixins";
 @import "./components/sidebar";
 @import "./components/mobileSidebar";
@@ -11,3 +11,4 @@
 @import "./components/countries";
 @import "./components/pagination";
 @import "./components/searcher";
+@import "./pages/not-found";

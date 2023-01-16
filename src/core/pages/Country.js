@@ -1,5 +1,6 @@
 import { ArrowBack } from "@mui/icons-material";
 import { Country as CountryList, City, State } from "country-state-city";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useNavigate, useParams } from "react-router-dom";
 import Topbar from "../components/Topbar";
 
@@ -12,7 +13,11 @@ const Country = () => {
   const cities = City.getCitiesOfCountry(isoCode);
 
   return (
-    <>
+    <HelmetProvider>
+      <Helmet>
+        <title>{country.name} | detalhes do pais</title>
+      </Helmet>
+
       <Topbar />
       <div className="full-country">
         <div className="full-country__details">
@@ -54,7 +59,7 @@ const Country = () => {
           </div>
         </div>
       </div>
-    </>
+    </HelmetProvider>
   );
 };
 
