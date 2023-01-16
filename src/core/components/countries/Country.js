@@ -5,34 +5,34 @@ import {
   ArrowForward,
 } from "@mui/icons-material";
 
-const Country = () => {
+const Country = ({country}) => {
   return (
     <div className="country">
       <div className="country__name">
         <div className="country__flag">
           <img
             alt="United States"
-            src="http://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg"
+            src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${country.isoCode}.svg`}
           />
         </div>
-        <h3>Mozambique</h3>
+        <h3>{country.name}</h3>
       </div>
       <div className="country__data">
         <div className="country__data--item">
           <LocalPhone />
-          <span>cod. telefonico: 258</span>
+          <span>cod. telefonico: {country.phonecode}</span>
         </div>
         <div className="country__data--item">
           <CurrencyExchangeOutlined />
-          <span>moeda: Mzn</span>
+          <span>moeda: {country.currency}</span>
         </div>
         <div className="country__data--item">
           <LocationOn />
-          <span>latitude: M415zn</span>
+          <span>latitude: {country.latitude}</span>
         </div>
         <div className="country__data--item">
           <LocationOn />
-          <span>longetude: 154546</span>
+          <span>longetude: {country.longetude}</span>
         </div>
       </div>
       <div className="country__btn">

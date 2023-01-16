@@ -1,0 +1,23 @@
+.searcher {
+  margin-bottom: 50px;
+
+  &__input {
+    display: flex;
+    align-items: center;
+  }
+
+  input {
+    width: 62%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid $gray;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 16px;
+  }
+
+  &__icon{
+    transform: translateX(-30px);
+    color: $gray;
+  }
+}
