@@ -5,7 +5,14 @@ import {
   ArrowForward,
 } from "@mui/icons-material";
 
-const Country = ({country}) => {
+import { useNavigate } from "react-router-dom";
+
+const Country = ({ country }) => {
+  const navigate = useNavigate();
+
+  const handleVIewPage = () =>{
+    navigate(`/country/${country.isoCode}`);
+  }
   return (
     <div className="country">
       <div className="country__name">
@@ -36,7 +43,7 @@ const Country = ({country}) => {
         </div>
       </div>
       <div className="country__btn">
-        <button>
+        <button onClick={handleVIewPage}>
           Ver mais <ArrowForward />
         </button>
       </div>
