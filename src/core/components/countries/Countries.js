@@ -10,6 +10,7 @@ const Countries = () => {
   const [firstItem, setFirstItem] = useState(0);
   const [lastItem, setLastItem] = useState(6);
   const [searchTerm, setSearchTerm] = useState("");
+  const [busca, setBusca] = useState(false);
 
   useEffect(() => {
     setCountries(CountryList.getAllCountries());
@@ -30,19 +31,9 @@ const Countries = () => {
   };
 
   const handleSetSearchTerm = (e) => {
-    if(e.target.value !== ""){
-      setSearchTerm(e.target.value);
-      setCountriesSearch([]);
-      const t =
-        countries
-          .filter((country) =>
-            country.name.toLowerCase().includes(searchTerm.toLowerCase())
-          )
-          .sort()
-    
-      console.log(t);
-    }
-   
+    setSearchTerm(e.target.value);
+    console.log(searchTerm);
+   countries.map(country => console.log(country.name))
   };
 
   return (
@@ -58,19 +49,12 @@ const Countries = () => {
         firstItem + 1
       } - ${lastItem}`}</div>
       <div className="countries__list">
-        {searchTerm
-          ? countriesSearch
-              .sort()
-              .slice(firstItem, lastItem)
-              .map((country) => {
-                return <Country key={country.name} country={country} />;
-              })
-          : countries
-              .sort()
-              .slice(firstItem, lastItem)
-              .map((country) => {
-                return <Country key={country.name} country={country} />;
-              })}
+        {countries
+          .sort()
+          .slice(firstItem, lastItem)
+          .map((country) => {
+            return <Country key={country.name} country={country} />;
+          })}
       </div>
       <div className="countries__pagination">
         <Pagination
