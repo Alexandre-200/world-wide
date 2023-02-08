@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Content from "../components/Content";
-import Countries from "../components/countries/Countries";
+import States from "../components/states/States";
 import MobileSidebar from "../components/MobileSidebar";
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
 
-const Home = () => {
+const State = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
     <HelmetProvider>
       <Helmet>
-        <title>WorldWide | Todos os paises do mundo</title>
+        <title>WorldWide | Todos os estados do mundo</title>
       </Helmet>
       <div className="home">
         <Sidebar />
@@ -22,11 +22,11 @@ const Home = () => {
         />
         <Content>
           <Topbar setShowMenu={() => setShowMenu(true)} />
-          <Countries />
+          <States />
         </Content>
       </div>
     </HelmetProvider>
   );
 };
 
-export default Home;
+export default State;

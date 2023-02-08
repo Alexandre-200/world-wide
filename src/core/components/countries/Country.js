@@ -39,7 +39,7 @@ const Country = ({ country }) => {
         </div>
         <div className="country__data--item">
           <LocationOn />
-          <span>longetude: {country.longetude}</span>
+          <span>longitude: {country.longitude}</span>
         </div>
       </div>
       <div className="country__btn">

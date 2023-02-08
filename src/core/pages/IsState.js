@@ -33,19 +33,7 @@ const Country = () => {
           <h3 className="full-country__name">{country.name}</h3>
           <div className="full-country__data">
             <div className="full-country__states">
-              <h3 className="full-country__header">{states.length}</h3>
-              <ul className="full-country__list">
-                {states.sort().map((state) => {
-                  return (
-                    <li key={state.name} className="full-country__item">
-                      {state.name}
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-            <div className="full-country__states">
-              <h3 className="full-country__header">{cities.length}</h3>
+              <h3 className="full-country__header">Cidades</h3>
               <ul className="full-country__list">
                 {cities.sort().map((city) => {
                   return (

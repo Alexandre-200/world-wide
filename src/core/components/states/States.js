@@ -1,23 +1,25 @@
-import { Country as CountryList } from "country-state-city";
+import { State as StatesList } from "country-state-city";
 import { useEffect, useState } from "react";
 import Pagination from "../Pagination";
 import Searcher from "../Searcher";
-import Country from "./Country";
+import State from "./State";
 
-const Countries = () => {
-  const [countries, setCountries] = useState([]);
-  const [countriesSearch, setCountriesSearch] = useState([]);
+const States = () => {
+  const [states, setStates] = useState([]);
+ 
   const [firstItem, setFirstItem] = useState(0);
   const [lastItem, setLastItem] = useState(6);
   const [searchTerm, setSearchTerm] = useState("");
-  const [busca, setBusca] = useState(false);
+  
 
   useEffect(() => {
-    setCountries(CountryList.getAllCountries());
+    setStates(StatesList.getAllStates());
+    //alert("states");
+    
   }, []);
 
   const handleNextPage = () => {
-    if (lastItem < countries.length - 1) {
+    if (lastItem < states.length - 1) {
       setFirstItem(firstItem + 6);
       setLastItem(lastItem + 6);
     }
@@ -33,34 +35,34 @@ const Countries = () => {
   const handleSetSearchTerm = (e) => {
     setSearchTerm(e.target.value);
     console.log(searchTerm);
-    countries.map(country => console.log(country.name))
+   states.map(state => console.log(state.name))
   };
 
   return (
-    <div className="countries">
-      <div className="countries__search">
+    <div className="states">
+      <div className="states__search">
         <Searcher
           searchTerm={searchTerm}
           setSearchTerm={handleSetSearchTerm}
-          placeholder="Escreva (em ingles) o nome do pais"
+          placeholder="Escreva (em ingles) o nome do estado"
         />
       </div>
-      <div className="countries__number">{` ${
+      <div className="states__number">{` ${
         firstItem + 1
       } - ${lastItem}`}</div>
-      <div className="countries__list">
-        {countries
+      <div className="states__list">
+        {states
           .sort()
           .slice(firstItem, lastItem)
-          .map((country) => {
-            return <Country key={country.name} country={country} />;
+          .map((state) => {
+            return <State key={state.name} state={state} />;
           })}
       </div>
-      <div className="countries__pagination">
+      <div className="states__pagination">
         <Pagination
           handleNextPage={handleNextPage}
           handlePreviousPage={handlePreviousPage}
-          countries={countries}
+          countries={states}
           firstItem={firstItem}
           lastItem={lastItem}
         />
@@ -69,4 +71,4 @@ const Countries = () => {
   );
 };
 
-export default Countries;
+export default States;
