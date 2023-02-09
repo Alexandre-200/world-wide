@@ -9,9 +9,9 @@ const App = () => {
   return (
     <Routes>
       <Route path="/world-wide" element={<Home />} />
-      <Route path="/states" element={<State/>} />
-      <Route path="/country/:isoCode" element={<IsCountry />} />
-      <Route path="/state/:isoCode" element={<IsState />} />
+      <Route path="/world-wide/states" element={<State/>} />
+      <Route path="/world-wide/country/:isoCode" element={<IsCountry />} />
+      <Route path="/world-wide/state/:isoCode" element={<IsState />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
