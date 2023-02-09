@@ -23,6 +23,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -49,9 +51,5 @@
   "devDependencies": {
     "gh-pages": "^5.0.0"
   },
-  "homepage": "https://github.com/Alexandre-200/world-wide",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  }
+  "homepage": "https://Alexandre-200.github.io/world-wide"
 }
